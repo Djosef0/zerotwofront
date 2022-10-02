@@ -1,0 +1,179 @@
+@import "../../app.scss";
+.home{
+    background-color: var(--main-color);
+    overflow: hidden;
+
+    .collection{
+
+   margin-bottom: 50px;
+   
+
+
+
+    .collection-title{
+        text-align: center;
+        padding:40px 0px ;
+        width: 100%;
+        color: rgb(200, 75, 75);
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: rgb(233, 233, 233);
+      
+        @include mobile {
+         margin-top:20px;
+          
+        }
+        @include tablet {
+         margin-top: 20px;
+          
+        }
+    }
+    .collection-title1{
+      text-align: center;
+      padding:40px 0px ;
+      width: 100%;
+      color: rgb(200, 75, 75);
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      background-color: rgb(233, 233, 233);
+    
+      @include mobile {
+       margin-top: 180px;
+        
+      }
+      @include tablet {
+       margin-top: 180px;
+        
+      }
+  }
+
+    .collection-container{
+        width: 95%;
+        margin: 10px auto;
+        background-color: white;
+        height: 50vh;
+        border-radius:12px;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 14px;
+        
+        @include mobile {
+       background-color: transparent;
+       font-size: 12px;
+        }
+        @include tablet {
+       background-color: transparent;
+       font-size: 12px;
+        }
+       
+
+        .collection-container-item{
+          flex-basis: 16%;
+          height: 90%;
+          width: 17%;
+         position: relative;
+          
+          margin: auto;
+          cursor: pointer;
+
+        
+          @include mobile {
+            flex-basis: 35%;
+            height: 45%;
+            
+          }
+          @include tablet {
+            flex-basis: 35%;
+            height: 50%;
+           
+            
+            
+          }
+         
+        
+          img{
+            width: 100%;
+            background-position: center;
+            height: 90%;
+            border-radius: 12px;
+
+            
+     
+        }
+        .overlay{
+         width: 100%;
+         height: 90%;
+         position: absolute;
+         top:0;
+         border-radius: 7px;
+         cursor: pointer;   
+         background:linear-gradient(transparent,#5a0316);
+         opacity: 0;
+         transition: 1s;
+        }
+        
+     &:hover .overlay{
+      opacity: 1  ;
+     }
+     
+
+      .commentaire{
+       width: 80%;
+       position: absolute;
+       bottom: 0;
+       left: 50%;
+        transform:translateX(-50%);
+        transition: 1s;
+        opacity:0;
+        color: white;
+        text-align: center;
+     
+       
+      .acc{
+        position: relative;
+        left: -13px;
+        bottom: 5px;
+        ul{
+          list-style: none;
+        margin: 0;
+         left: 16px;
+         
+
+          li{
+            text-align: center;
+            margin-top: 5px;
+            transition: 0.3s;
+
+          
+          
+            &:hover{
+              letter-spacing: 2px;
+            }
+          }
+        }
+      }
+       
+        button{
+          margin-top: 5px;
+          border: none;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:hover{
+            letter-spacing: 2px;
+          }
+        }
+
+      }
+      
+      &:hover .commentaire
+     {
+      bottom: 40%;
+      opacity: 1;
+    }
+
+    }    
+    }
+
+ 
+}
+
+}
