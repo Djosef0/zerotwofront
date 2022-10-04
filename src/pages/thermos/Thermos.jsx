@@ -2,6 +2,7 @@ import React,{useState , useEffect} from 'react'
 import axios from 'axios';
 import "./thermos.scss";
 import { Link } from "react-router-dom";
+import { axiosInstance } from '../../config';
 
 export default function  Thermos ()  {
 const [capuche , setCapuche] = useState([]);
@@ -12,7 +13,7 @@ useEffect(() => {
  
     const getCapuche = async () => {
       try {
-        const res = await axios.get("/clothers/thermos", {
+        const res = await axiosInstance.get("/clothers/thermos", {
           headers: {
             token:
             "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,

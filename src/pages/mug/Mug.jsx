@@ -2,6 +2,7 @@ import React,{useState , useEffect} from 'react'
 import axios from 'axios';
 import "./mug.scss";
 import { Link } from "react-router-dom";
+import { axiosInstance } from '../../config';
 
 export default function  Mug ()  {
 const [capuche , setCapuche] = useState([]);
@@ -12,7 +13,7 @@ useEffect(() => {
  
     const getCapuche = async () => {
       try {
-        const res = await axios.get("/clothers/mug", {
+        const res = await axiosInstance.get("/clothers/mug", {
           headers: {
             token:
             "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,

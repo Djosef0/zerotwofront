@@ -2,6 +2,7 @@ import React,{useState , useEffect} from 'react'
 import axios from 'axios';
 import "./casquettes.scss";
 import { Link } from "react-router-dom";
+import { axiosInstance } from '../../config';
 
 export default function  Casquettes ()  {
 const [casquettes , setCasquettes] = useState([]);
@@ -12,7 +13,7 @@ useEffect(() => {
  
     const getCasquettes = async () => {
       try {
-        const res = await axios.get("/clothers/casquettes", {
+        const res = await axiosInstance.get("/clothers/casquettes", {
           headers: {
             token:
             "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,

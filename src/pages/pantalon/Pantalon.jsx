@@ -1,6 +1,7 @@
 import React,{useState , useEffect} from 'react'
 import axios from 'axios';
 import "./pantalon.scss";
+import { axiosInstance } from '../../config';
 
 
 export default function Panta ()  {
@@ -12,7 +13,7 @@ useEffect(() => {
  
     const getPanta = async () => {
       try {
-        const res = await axios.get("/clothers/pantalon", {
+        const res = await axiosInstance.get("/clothers/pantalon", {
           headers: {
             token:
             "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,

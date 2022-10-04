@@ -11,6 +11,7 @@ import veste from "../../components/img/vesteN.png";
 import pullbej from "../../components/img/pullbej1.png"
 import accesoire from "../../components/img/acc.png";
 import { Link , useHistory} from "react-router-dom";
+import { axiosInstance } from "../../config";
 
 const Home = ({ type }) => {
   const history = useHistory();
@@ -36,7 +37,7 @@ function pantalon(e){
   useEffect(() => {
     const getRandomLists = async () => {
       try {
-        const res = await axios.get(
+        const res = await axiosInstance.get(
           `lists${type ? "?type=" + type : ""}`,
         
           {

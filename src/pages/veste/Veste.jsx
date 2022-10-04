@@ -1,6 +1,7 @@
 import React,{useState , useEffect} from 'react'
 import axios from 'axios';
 import "./veste.scss";
+import { axiosInstance } from '../../config';
 
 
 export default function  Veste ()  {
@@ -12,7 +13,7 @@ useEffect(() => {
  
     const getColmontant = async () => {
       try {
-        const res = await axios.get("/clothers/veste", {
+        const res = await axiosInstance.get("/clothers/veste", {
           headers: {
             token:
             "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,

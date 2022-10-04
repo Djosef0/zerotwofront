@@ -1,6 +1,7 @@
 import React,{useState , useEffect} from 'react'
 import axios from 'axios';
 import "./pull.scss";
+import { axiosInstance } from '../../config';
 
 
 export default function  Pull ()  {
@@ -12,7 +13,7 @@ useEffect(() => {
  
     const getPull = async () => {
       try {
-        const res = await axios.get("/clothers/pull", {
+        const res = await axiosInstance.get("/clothers/pull", {
           headers: {
             token:
             "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
