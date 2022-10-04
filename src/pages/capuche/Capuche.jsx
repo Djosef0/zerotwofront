@@ -13,7 +13,7 @@ useEffect(() => {
  
     const getCapuche = async () => {
       try {
-        const res = await axiosInstance.get(Url+"/clothers/capuche", {
+        const res = await axios.get(Url+"/clothers/capuche", {
           headers: {
             token:
             "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
