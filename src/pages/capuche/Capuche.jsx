@@ -7,13 +7,13 @@ import { axiosInstance } from '../../config';
 export default function  Capuche ()  {
 const [capuche , setCapuche] = useState([]);
 
-
+const Url = "https://projet.adaptable.app/api/"
 
 useEffect(() => {
  
     const getCapuche = async () => {
       try {
-        const res = await axiosInstance.get("/clothers/capuche", {
+        const res = await axiosInstance.get(Url+"/clothers/capuche", {
           headers: {
             token:
             "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,

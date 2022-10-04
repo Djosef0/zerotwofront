@@ -45,7 +45,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://node-deploy-ecprress-6mts6ha2r-djosef0.vercel.app/api/",
+  "proxy": "https://projet.adaptable.app/api/",
   "devDependencies": {
     "react-error-overlay": "^6.0.9"
   }

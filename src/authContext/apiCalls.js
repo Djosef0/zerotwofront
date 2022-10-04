@@ -3,9 +3,10 @@ import { axiosInstance } from "../config";
 import { loginFailure, loginStart, loginSuccess } from "./AuthActions";
 
 export const login = async (user, dispatch) => {
+  const Url = "https://projet.adaptable.app/api/"
   dispatch(loginStart());
   try {
-    const res = await axiosInstance.post("auth/login", user);
+    const res = await axios.post(Url+"auth/login", user);
     dispatch(loginSuccess(res.data));
   } catch (err) {
     dispatch(loginFailure());
