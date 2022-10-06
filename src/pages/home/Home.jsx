@@ -12,6 +12,7 @@ import pullbej from "../../components/img/pullbej1.png"
 import accesoire from "../../components/img/acc.png";
 import { Link , useHistory} from "react-router-dom";
 import { axiosInstance } from "../../config";
+import { liste } from "../../list";
 
 const Home = ({ type }) => {
   const history = useHistory();
@@ -34,25 +35,7 @@ function pantalon(e){
   
 }
 
-  useEffect(() => {
-    const getRandomLists = async () => {
-      try {
-        const res = await axiosInstance.get(
-          `lists${type ? "?type=" + type : ""}`,
-        
-          {
-            headers: {
-              token:
-              "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
-            },
-          })
-        setLists(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getRandomLists();
-  }, [type, genre]);
+
 
   return (
     
@@ -79,7 +62,7 @@ function pantalon(e){
      </div>
      <div className="collection">
      <h1 className="collection-title1">Les Styles du moment</h1>
-     {lists.map((list) => (
+     {liste.map((list) => (
         <List list={list} />))}
 
      </div>

@@ -9,27 +9,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { axiosInstance } from "../../config";
-
+import { veste } from "../../veste";
 export default function ListItem({ index, item }) {
   const [isHovered, setIsHovered] = useState(false);
   const [clothe, setClothe] = useState({});
 
-  useEffect(() => {
-    const getClothe = async () => {
-      try {
-        const res = await axiosInstance.get("/clothers/find/" + item, {
-          headers: {
-            token:
-            "Bearer "+JSON.parse(localStorage.getItem("user")).accessToken,
-          },
-        });
-        setClothe(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getClothe();
-  }, [item]);
+
 
   return (
     <Link to={{ pathname: "/watch", clothe: clothe }}>
@@ -39,15 +24,15 @@ export default function ListItem({ index, item }) {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <img src={clothe?.imgSm} alt="" />
+        <img src={veste?.img} alt="" />
         {isHovered && (
           <>
             <div className="itemInfo">
               
-              <div className="desc"><b style={{"fontSize":"20px"}}>{clothe.type}</b></div>
-              <div className="desc">taille disponible <b>{clothe.size}</b></div>
-              <div className="desc">couleur disponible <b>{clothe.color}</b></div>
-              <div className="desc">prix <b>{clothe.prix}</b></div>
+              <div className="desc"><b style={{"fontSize":"20px"}}>{veste.desc}</b></div>
+              <div className="desc">taille disponible <b>{veste.taille}</b></div>
+              <div className="desc">couleur disponible <b>{veste.couleur}</b></div>
+              <div className="desc">prix <b>{veste.prix}</b></div>
               <p>appuyez ici!</p>
             </div>
           </>
